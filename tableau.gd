@@ -6,22 +6,27 @@ var clicked_card
 # Called when the node enters the scene tree for the first time.
 func _ready():
     card_stack = []
+    # Generate card values
     var suits = ['C','D','H','S']
     var indices = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
     var card_values = []
     for suit in suits:
         for index in indices:
             card_values.push_back(suit + index)
-    print(card_values)
+    # Duplicate base card and set values
     for i in range(0, card_values.size()):
-        var new_card = $cards/card.duplicate()
+        var new_card = $card.duplicate()
         new_card.set_card_value(card_values[i])
-        new_card.z_index = i + 1
         new_card.visible = true
+        new_card.z_index = i + 1
         card_stack.push_back(new_card)
         add_child(new_card)
+    # Shuffle cards and reset z values
+    card_stack.shuffle()
+    for i in range(0, card_stack.size()):
+        var card = card_stack[i]
+        card.z_index = i + 1
     clicked_card = null
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

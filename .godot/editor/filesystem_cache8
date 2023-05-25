@@ -1,13 +1,14 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1684977728
+::res://::1685013648
 card.gd::GDScript::-1::1684948400::0::1::::<>Sprite2D<>::
 default_env.tres::Environment::8221747559392367514::1684948652::0::1::::<><>::
 icon.png::CompressedTexture2D::4356463345619570216::1684943408::1684943538::1::::<><>::
 tableau.gd::GDScript::-1::1684948484::0::1::::<>Node2D<>::
 tableau.tscn::PackedScene::4212735516817070132::1684948652::0::1::::<><>::res://tableau.gd<>uid://b3v6euyajv1nw<>res://card.gd
-::res://Neon Orbis Playing Cards/::1684943617
+::res://Neon Orbis Playing Cards/::1685013571
 Cards.png::CompressedTexture2D::5937535386455492712::1684943617::1684943617::1::::<><>::
 Cards_Dark.png::CompressedTexture2D::464613714927846705::1684943617::1684943617::1::::<><>::
+README.md::TextFile::-1::1685013571::0::1::::<><>::
 ::res://Neon Orbis Playing Cards/Cards/::1684943617
 Back_Blue.png::CompressedTexture2D::7946932779947881318::1684943617::1684943617::1::::<><>::
 Back_Red.png::CompressedTexture2D::7685313860461562136::1684943617::1684943617::1::::<><>::
