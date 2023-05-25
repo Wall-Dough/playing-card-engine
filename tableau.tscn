@@ -11,3 +11,8 @@ script = ExtResource("1_f6txe")
 visible = false
 texture = ExtResource("1_nhlh4")
 script = ExtResource("2_ldr64")
+
+[node name="zone1" type="Node2D" parent="."]
+position = Vector2(539, 285)
+metadata/change_face = true
+metadata/face_up = false

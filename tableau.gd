@@ -21,6 +21,7 @@ func _ready():
         new_card.z_index = i + 1
         card_stack.push_back(new_card)
         add_child(new_card)
+        new_card.snap_to_zone($zone1)
     # Shuffle cards and reset z values
     card_stack.shuffle()
     for i in range(0, card_stack.size()):

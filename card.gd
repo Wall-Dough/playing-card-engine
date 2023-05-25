@@ -17,6 +17,9 @@ func refresh_image():
     var texture = ImageTexture.create_from_image(image)
     self.texture = texture
 
+func snap_to_zone(zone):
+    self.position = Vector2(zone.position)
+
 func set_card_value(card_value):
     self.card_value = card_value
     if !face_up:
