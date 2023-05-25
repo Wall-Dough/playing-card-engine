@@ -14,7 +14,18 @@ texture = ExtResource("1_nhlh4")
 script = ExtResource("2_ldr64")
 
 [node name="zone1" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(539, 285)
 script = ExtResource("4_j5qbq")
 change_on_enter = true
+change_on_exit = true
 face_up_on_exit = true
+
+[node name="Polygon2D" type="Polygon2D" parent="zone1"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-145, -200, 145, -200, 145, 200, -145, 200)
+
+[node name="Polygon2D2" type="Polygon2D" parent="zone1"]
+invert_enabled = true
+invert_border = 5.0
+polygon = PackedVector2Array(-145, -200, 145, -200, 145, 200, -145, 200)
