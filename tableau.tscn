@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1axeyctjooa3"]
+[gd_scene load_steps=5 format=3 uid="uid://b1axeyctjooa3"]
 
 [ext_resource type="Script" path="res://tableau.gd" id="1_f6txe"]
 [ext_resource type="Texture2D" uid="uid://b3v6euyajv1nw" path="res://Neon Orbis Playing Cards/Cards/Joker.png" id="1_nhlh4"]
 [ext_resource type="Script" path="res://card.gd" id="2_ldr64"]
+[ext_resource type="Script" path="res://zone1.gd" id="4_j5qbq"]
 
 [node name="tableau" type="Node2D"]
 script = ExtResource("1_f6txe")
@@ -14,5 +15,6 @@ script = ExtResource("2_ldr64")
 
 [node name="zone1" type="Node2D" parent="."]
 position = Vector2(539, 285)
-metadata/change_face = true
-metadata/face_up = false
+script = ExtResource("4_j5qbq")
+change_on_enter = true
+face_up_on_exit = true

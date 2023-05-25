@@ -4,6 +4,7 @@ var start_card = null
 var start_mouse = null
 var card_value = "Joker"
 var face_up = true
+var zone = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,8 +18,18 @@ func refresh_image():
     var texture = ImageTexture.create_from_image(image)
     self.texture = texture
 
-func snap_to_zone(zone):
+func enter_zone(zone):
     self.position = Vector2(zone.position)
+    if zone.change_on_enter:
+        set_face_up(zone.face_up_on_enter)
+    self.zone = zone
+
+func exit_zone():
+    if zone == null:
+        return
+    if zone.change_on_exit:
+        set_face_up(zone.face_up_on_exit)
+    zone = null
 
 func set_card_value(card_value):
     self.card_value = card_value
@@ -56,4 +67,6 @@ func _input(event):
         start_mouse != null and
         event is InputEventMouseMotion):
         var mouse_diff = event.position - start_mouse
+        if mouse_diff.x != 0 or mouse_diff.y != 0:
+            exit_zone()
         self.position = start_card + mouse_diff
