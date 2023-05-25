@@ -3,16 +3,31 @@ extends Sprite2D
 var start_card = null
 var start_mouse = null
 var card_value = "Joker"
+var face_up = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
 
-func set_card_value(card_value):
-    self.card_value = card_value
+func refresh_image():
+    var card_value = self.card_value
+    if !face_up:
+        card_value = "Back_Red"
     var image = Image.load_from_file("res://Neon Orbis Playing Cards/Cards/" + card_value + ".png")
     var texture = ImageTexture.create_from_image(image)
     self.texture = texture
+
+func set_card_value(card_value):
+    self.card_value = card_value
+    if !face_up:
+        return
+    refresh_image()
+
+func set_face_up(face_up):
+    if face_up == self.face_up:
+        return
+    self.face_up = face_up
+    refresh_image()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
