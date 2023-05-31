@@ -68,5 +68,20 @@ func _input(event):
         event is InputEventMouseMotion):
         var mouse_diff = event.position - start_mouse
         if mouse_diff.x != 0 or mouse_diff.y != 0:
-            exit_zone()
-        self.position = start_card + mouse_diff
+            var new_position = start_card + mouse_diff
+            if zone != null:
+                var zone_diff = new_position - zone.position
+                zone_diff = zone_diff.abs()
+                if zone_diff.x > 10 or zone_diff.y > 10:
+                    exit_zone()
+                else:
+                    new_position = zone.position
+            else:
+                var zones = get_parent().get_all_zones()
+                for a_zone in zones:
+                    var zone_diff = new_position - a_zone.position
+                    zone_diff = zone_diff.abs()
+                    if zone_diff.x <= 10 or zone_diff.y <= 10:
+                        enter_zone(a_zone)
+                        break
+            self.position = new_position

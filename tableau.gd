@@ -2,10 +2,13 @@ extends Node2D
 
 var card_stack
 var clicked_card
+var zones
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     card_stack = []
+    zones = []
+    zones.push_back($zone1)
     # Generate card values
     var suits = ['C','D','H','S']
     var indices = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
@@ -53,3 +56,6 @@ func _input(event):
             if clicked_card != null:
                 clicked_card.end_move()
                 clicked_card = null
+                
+func get_all_zones():
+    return zones

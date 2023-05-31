@@ -1,5 +1,4 @@
 res://default_env.tres
 res://tableau.tscn
-res://card.gd
 res://tableau.gd
-res://zone1.gd
+res://card.gd
